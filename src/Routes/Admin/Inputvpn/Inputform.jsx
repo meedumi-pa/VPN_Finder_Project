@@ -112,15 +112,14 @@ const Inputform = () => {
   const [POS06, setPOS06] = useState("");
   const [LQ_POS01, setLQ_POS01] = useState("");
   const [LQ_POS02, setLQ_POS02] = useState("");
-<<<<<<< HEAD
-=======
+
   const [Scale01, setScale01] = useState("");
   const [Scale02, setScale02] = useState("");
   const [Scale03, setScale03] = useState("");
   const [Scale04, setScale04] = useState("");
   const [Scale05, setScale05] = useState("");
   const [Scale06, setScale06] = useState("");
->>>>>>> 92cbe77082b86cdd71d5da81d5fc5ffa0a8901f8
+
   const [AreaManagerName, setAreaManagerName] = useState("");
   const [EPFno_Am, setEPFno_Am] = useState("");
   const [ContactNo_Am, setContactNo_Am] = useState("");
@@ -153,15 +152,14 @@ const Inputform = () => {
     POS06,
     LQ_POS01,
     LQ_POS02,
-<<<<<<< HEAD
-=======
+
     Scale01,
     Scale02,
     Scale03,
     Scale04,
     Scale05,
     Scale06,
->>>>>>> 92cbe77082b86cdd71d5da81d5fc5ffa0a8901f8
+
     Region,
     openDate,
     AreaManagerName,
@@ -176,10 +174,8 @@ const Inputform = () => {
   const [togglemode2, setTogglemode2] = useState(false);
   const [togglemode3, setTogglemode3] = useState(false);
   const [togglemode4, setTogglemode4] = useState(false);
-<<<<<<< HEAD
-=======
+
   const [togglemode5, setTogglemode5] = useState(false);
->>>>>>> 92cbe77082b86cdd71d5da81d5fc5ffa0a8901f8
 
   useEffect(() => {
     setShowForm(true);
@@ -253,10 +249,7 @@ const Inputform = () => {
     //   [name]: value,
     // }));
   };
-<<<<<<< HEAD
-=======
 
->>>>>>> 92cbe77082b86cdd71d5da81d5fc5ffa0a8901f8
   const isValidIPAddress = (value) => {
     const ipv4WithSubnetRegex =
       /^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(\/(3[0-2]|[12]?[0-9]))?$/;
@@ -267,13 +260,13 @@ const Inputform = () => {
 
   const formValidation = () => {
     const newErrors = {};
-<<<<<<< HEAD
+
     if (!checkedvalue) {
       newErrors.checkedvalue = "* Branch Type is required.";
     }
     if (!selectedProvince || !selectedDistrict) {
       newErrors.selectedProvince = "* Province and  District is required.";
-=======
+
 
     if (!checkedvalue) {
       newErrors.checkedvalue = "* Branch Type is required.";
@@ -281,20 +274,20 @@ const Inputform = () => {
 
     if (!selectedProvince || !selectedDistrict) {
       newErrors.selectedProvince = "* Province and District are required.";
->>>>>>> 92cbe77082b86cdd71d5da81d5fc5ffa0a8901f8
+
     }
 
     if (!openDate) {
       newErrors.openDate = "* Opening date is required.";
     }
-<<<<<<< HEAD
+
     if (!TelephoneNumber) {
       newErrors.TelephoneNumber = " * Telephone number is required.";
     } else if (!/^\d{10}$/.test(TelephoneNumber)) {
       newErrors.TelephoneNumber =
         " * Invalid telephone number format (10 digits expected).";
     }
-=======
+
 
     const validatePhoneNumber = (number) => {
       if (!number) return " * Telephone number is required.";
@@ -312,13 +305,13 @@ const Inputform = () => {
     addErrorIfExists(ContactNo_Am, "ContactNo_Am");
     addErrorIfExists(ContactNo_Sm, "ContactNo_Sm");
 
->>>>>>> 92cbe77082b86cdd71d5da81d5fc5ffa0a8901f8
+
     if (!Email) {
       newErrors.Email = "* Email is required.";
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(Email)) {
       newErrors.Email = " * Invalid email format.";
     }
-<<<<<<< HEAD
+
     if (!DSdevision) {
       newErrors.DSdevision = " * Ds devision is required.";
     }
@@ -427,7 +420,7 @@ const Inputform = () => {
       return;
     }
   };
-=======
+
 
     if (!DSdevision) {
       newErrors.DSdevision = " * Ds division is required.";
@@ -474,12 +467,12 @@ const Inputform = () => {
     }
   };
 
->>>>>>> 92cbe77082b86cdd71d5da81d5fc5ffa0a8901f8
+
   const submitReview = async (e) => {
     e.preventDefault();
     console.log("submit clicked");
     const isValid = formValidation();
-<<<<<<< HEAD
+
     if (isValid) {
       try {
         const response = await axios.post("http://localhost:3001/insert", {
@@ -587,7 +580,7 @@ const Inputform = () => {
       setSelectedDistrict("");
       setCheckedvalue(false);
     }
-=======
+
     console.log("Is form valid?", isValid);
     if (!isValid) {
       console.error(
@@ -701,7 +694,7 @@ const Inputform = () => {
     setSelectedProvince("");
     setSelectedDistrict("");
     setCheckedvalue(false);
->>>>>>> 92cbe77082b86cdd71d5da81d5fc5ffa0a8901f8
+
   };
 
   const showToastMessage = (message, type) => {
@@ -715,10 +708,9 @@ const Inputform = () => {
     setTogglemode2(false);
     setTogglemode3(false);
     setTogglemode4(false);
-<<<<<<< HEAD
-=======
+
     setTogglemode5(false);
->>>>>>> 92cbe77082b86cdd71d5da81d5fc5ffa0a8901f8
+
   };
 
   const handleToggleMode2 = () => {
@@ -726,10 +718,9 @@ const Inputform = () => {
     setTogglemode2(true);
     setTogglemode3(false);
     setTogglemode4(false);
-<<<<<<< HEAD
-=======
+
     setTogglemode5(false);
->>>>>>> 92cbe77082b86cdd71d5da81d5fc5ffa0a8901f8
+
   };
 
   const handleToggleMode3 = () => {
@@ -737,10 +728,9 @@ const Inputform = () => {
     setTogglemode2(false);
     setTogglemode3(true);
     setTogglemode4(false);
-<<<<<<< HEAD
-=======
+
     setTogglemode5(false);
->>>>>>> 92cbe77082b86cdd71d5da81d5fc5ffa0a8901f8
+
   };
 
   const handleToggleMode4 = () => {
@@ -748,8 +738,7 @@ const Inputform = () => {
     setTogglemode2(false);
     setTogglemode3(false);
     setTogglemode4(true);
-<<<<<<< HEAD
-=======
+
     setTogglemode5(false);
   };
   const handleToggleMode5 = () => {
@@ -758,7 +747,7 @@ const Inputform = () => {
     setTogglemode3(false);
     setTogglemode4(false);
     setTogglemode5(true);
->>>>>>> 92cbe77082b86cdd71d5da81d5fc5ffa0a8901f8
+
   };
 
   const handleResetIForm = () => {
@@ -1367,8 +1356,7 @@ const Inputform = () => {
             </div>
           )}
           <div
-<<<<<<< HEAD
-=======
+
             className={`toggleBranch toggleBranch5 ${
               togglemode5 ? "active" : ""
             }`}
@@ -1507,7 +1495,7 @@ const Inputform = () => {
             </div>
           )}
           <div
->>>>>>> 92cbe77082b86cdd71d5da81d5fc5ffa0a8901f8
+
             className={`toggleBranch toggleBranch4 ${
               togglemode4 ? "active" : ""
             }`}

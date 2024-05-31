@@ -45,15 +45,13 @@ const Searchbar = () => {
     Contact_BM: "",
     BM_Name: "",
     Contact_AM: "",
-<<<<<<< HEAD
-=======
     Scale01: "",
     Scale02: "",
     Scale03: "",
     Scale04: "",
     Scale05: "",
     Scale06: "",
->>>>>>> 92cbe77082b86cdd71d5da81d5fc5ffa0a8901f8
+
   });
 
   const [selectedRegion, setSelectedRegion] = useState([
@@ -124,10 +122,8 @@ const Searchbar = () => {
   const [togglesearch2, setTogglesearch2] = useState(false);
   const [togglesearch3, setTogglesearch3] = useState(false);
   const [togglesearch4, setTogglesearch4] = useState(false);
-<<<<<<< HEAD
-=======
   const [togglesearch5, setTogglesearch5] = useState(false);
->>>>>>> 92cbe77082b86cdd71d5da81d5fc5ffa0a8901f8
+
 
   const [toastMessage, setToastMessage] = useState("");
   const [errors, setErrors] = useState({});
@@ -222,15 +218,14 @@ const Searchbar = () => {
     const Contact_BM = formData?.Contact_BM;
     const AM_Name = formData?.AM_Name;
     const BM_Name = formData?.BM_Name;
-<<<<<<< HEAD
-=======
+
     const Scale01 = formData?.Scale01;
     const Scale02 = formData?.Scale02;
     const Scale03 = formData?.Scale03;
     const Scale04 = formData?.Scale04;
     const Scale05 = formData?.Scale05;
     const Scale06 = formData?.Scale06;
->>>>>>> 92cbe77082b86cdd71d5da81d5fc5ffa0a8901f8
+
 
     const newErrors = {};
 
@@ -294,8 +289,7 @@ const Searchbar = () => {
     if (!isValidIPAddress(LQPOS02)) {
       newErrors.LQPOS02 = " * Invalid IP Address";
     }
-<<<<<<< HEAD
-=======
+
     if (!isValidIPAddress(Scale01)) {
       newErrors.Scale01 = " * Invalid IP Address";
     }
@@ -314,7 +308,7 @@ const Searchbar = () => {
     if (!isValidIPAddress(Scale06)) {
       newErrors.Scale06 = " * Invalid IP Address";
     }
->>>>>>> 92cbe77082b86cdd71d5da81d5fc5ffa0a8901f8
+
     if (Object.keys(newErrors).length === 0) {
       // All validations passed, submit the form
       console.log("Form submitted!");
@@ -367,28 +361,24 @@ const Searchbar = () => {
     setTogglesearch2(true);
     setTogglesearch3(false);
     setTogglesearch4(false);
-<<<<<<< HEAD
-=======
+
     setTogglesearch5(false);
->>>>>>> 92cbe77082b86cdd71d5da81d5fc5ffa0a8901f8
+
   };
   const handleToggleSearch3 = () => {
     setTogglesearch(false);
     setTogglesearch2(false);
     setTogglesearch3(true);
     setTogglesearch4(false);
-<<<<<<< HEAD
-=======
+
     setTogglesearch5(false);
->>>>>>> 92cbe77082b86cdd71d5da81d5fc5ffa0a8901f8
+
   };
   const handleToggleSearch4 = () => {
     setTogglesearch(false);
     setTogglesearch2(false);
     setTogglesearch3(false);
-    setTogglesearch4(true);
-<<<<<<< HEAD
-=======
+
     setTogglesearch5(false);
   };
   const handleToggleSearch5 = () => {
@@ -397,7 +387,7 @@ const Searchbar = () => {
     setTogglesearch3(false);
     setTogglesearch4(false);
     setTogglesearch5(true);
->>>>>>> 92cbe77082b86cdd71d5da81d5fc5ffa0a8901f8
+
   };
   return (
     <div className="searchContainer">
@@ -974,8 +964,7 @@ const Searchbar = () => {
           )}
         </fieldset>
         <fieldset>
-<<<<<<< HEAD
-=======
+
           <legend>Scale Details</legend>
 
           <BsChevronCompactDown
@@ -1108,7 +1097,7 @@ const Searchbar = () => {
           )}
         </fieldset>
         <fieldset>
->>>>>>> 92cbe77082b86cdd71d5da81d5fc5ffa0a8901f8
+
           <legend>Manager Details</legend>
           <BsChevronCompactDown
             size={25}

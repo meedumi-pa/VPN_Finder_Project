@@ -45,6 +45,15 @@ const Search = () => {
     Contact_BM: "",
     BM_Name: "",
     Contact_AM: "",
+<<<<<<< HEAD
+=======
+    Scale01: "",
+    Scale02: "",
+    Scale03: "",
+    Scale04: "",
+    Scale05: "",
+    Scale06: "",
+>>>>>>> 92cbe77082b86cdd71d5da81d5fc5ffa0a8901f8
   });
 
   const [selectedRegion, setSelectedRegion] = useState([
@@ -115,6 +124,10 @@ const Search = () => {
   const [togglesearch2, setTogglesearch2] = useState(false);
   const [togglesearch3, setTogglesearch3] = useState(false);
   const [togglesearch4, setTogglesearch4] = useState(false);
+<<<<<<< HEAD
+=======
+  const [togglesearch5, setTogglesearch5] = useState(false);
+>>>>>>> 92cbe77082b86cdd71d5da81d5fc5ffa0a8901f8
 
   const [toastMessage, setToastMessage] = useState("");
   const [errors, setErrors] = useState({});
@@ -318,6 +331,10 @@ const Search = () => {
     setTogglesearch2(false);
     setTogglesearch3(false);
     setTogglesearch4(false);
+<<<<<<< HEAD
+=======
+    setTogglesearch5(false);
+>>>>>>> 92cbe77082b86cdd71d5da81d5fc5ffa0a8901f8
   };
   const handleToggleSearch2 = () => {
     setTogglesearch(false);
@@ -330,13 +347,30 @@ const Search = () => {
     setTogglesearch2(false);
     setTogglesearch3(true);
     setTogglesearch4(false);
+<<<<<<< HEAD
+=======
+    setTogglesearch5(false);
+>>>>>>> 92cbe77082b86cdd71d5da81d5fc5ffa0a8901f8
   };
   const handleToggleSearch4 = () => {
     setTogglesearch(false);
     setTogglesearch2(false);
     setTogglesearch3(false);
     setTogglesearch4(true);
+<<<<<<< HEAD
   };
+=======
+    setTogglesearch5(false);
+  };
+  const handleToggleSearch5 = () => {
+    setTogglesearch(false);
+    setTogglesearch2(false);
+    setTogglesearch3(false);
+    setTogglesearch4(false);
+    setTogglesearch5(true);
+  };
+
+>>>>>>> 92cbe77082b86cdd71d5da81d5fc5ffa0a8901f8
   return (
     <div className="searchContainer">
       {/* {!loggedIn && <LoginForm setLoggedIn={setLoggedIn} />} */}
@@ -912,6 +946,105 @@ const Search = () => {
           )}
         </fieldset>
         <fieldset>
+<<<<<<< HEAD
+=======
+          <legend>Scale Details</legend>
+
+          <BsChevronCompactDown
+            size={25}
+            className={`toggleS_branch toggleS_branch5  ${
+              togglesearch5 ? "active" : ""
+            }`}
+            onClick={handleToggleSearch5}
+          />
+          {togglesearch5 && (
+            <>
+              <div className="form-Row">
+                <div className="form_field">
+                  <label>Scale 01</label>
+                  <input
+                    type="text"
+                    value={formData?.Scale01 || ""}
+                    readOnly={!editMode}
+                    onChange={(e) =>
+                      handleInputChange("Scale01", e.target.value)
+                    }
+                    className={`form-input ${editMode ? "inputEditMode" : ""}`}
+                  />
+                </div>
+
+                <div className="form_field">
+                  <label>Scale 02</label>
+                  <input
+                    type="text"
+                    value={formData?.Scale02 || ""}
+                    readOnly={!editMode}
+                    onChange={(e) =>
+                      handleInputChange("Scale02", e.target.value)
+                    }
+                    className={`form-input ${editMode ? "inputEditMode" : ""}`}
+                  />
+                </div>
+              </div>
+              <div className="form-Row">
+                <div className="form_field">
+                  <label>Scale 03</label>
+                  <input
+                    type="text"
+                    value={formData?.Scale03 || ""}
+                    readOnly={!editMode}
+                    onChange={(e) =>
+                      handleInputChange("Scale03", e.target.value)
+                    }
+                    className={`form-input ${editMode ? "inputEditMode" : ""}`}
+                  />
+                </div>
+
+                <div className="form_field">
+                  <label>Scale 04</label>
+                  <input
+                    type="text"
+                    value={formData?.Scale04 || ""}
+                    readOnly={!editMode}
+                    onChange={(e) =>
+                      handleInputChange("Scale04", e.target.value)
+                    }
+                    className={`form-input ${editMode ? "inputEditMode" : ""}`}
+                  />
+                </div>
+              </div>
+              <div className="form-Row">
+                <div className="form_field">
+                  <label>Scale 05</label>
+                  <input
+                    type="text"
+                    value={formData?.Scale05 || ""}
+                    readOnly={!editMode}
+                    onChange={(e) =>
+                      handleInputChange("Scale05", e.target.value)
+                    }
+                    className={`form-input ${editMode ? "inputEditMode" : ""}`}
+                  />
+                </div>
+
+                <div className="form_field">
+                  <label>Scale 06</label>
+                  <input
+                    type="text"
+                    value={formData?.Scale06 || ""}
+                    readOnly={!editMode}
+                    onChange={(e) =>
+                      handleInputChange("Scale06", e.target.value)
+                    }
+                    className={`form-input ${editMode ? "inputEditMode" : ""}`}
+                  />
+                </div>
+              </div>
+            </>
+          )}
+        </fieldset>
+        <fieldset>
+>>>>>>> 92cbe77082b86cdd71d5da81d5fc5ffa0a8901f8
           <legend>Manager Details</legend>
           <BsChevronCompactDown
             size={25}

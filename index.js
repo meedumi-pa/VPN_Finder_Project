@@ -258,6 +258,24 @@ app.get("/suggestions", (req, res) => {
   });
 });
 
+// app.get("/status", (req, res) => {
+//   const { term } = req.query;
+//   const searchStatus = `%${term}%`;
+//   const query = "SELECT * FROM vpninfo Where status LIKE ?";
+
+//   pool.query(query, [searchStatus, searchStatus], (err, results) => {
+//     if (err) {
+//       console.error("Error executing MySQL query:", err);
+//       res.status(500).json({ error: "Internal Server Error" });
+//     } else {
+//       const branchNames = results.map((result) => result.Region);
+//       const uniqueBranchNames = [...new Set(branchNames)]; // Use Set to remove duplicates
+//       res.json(uniqueBranchNames);
+//       console.log(uniqueBranchNames);
+//     }
+//   });
+// });
+
 app.post("/insert", (req, res) => {
   const {
     BranchCode,
@@ -536,6 +554,9 @@ app.get("/reports", (req, res) => {
   try {
     let query;
 
+
+    // Perform database query based on selected option
+
     switch (term1) {
       case "alldetails":
         query = `
@@ -603,6 +624,9 @@ app.get("/reports", (req, res) => {
       default:
         return res.status(400).send("Invalid option");
     }
+
+
+    // Log the constructed query and the term value for debugging
 
     console.log("Executing query:", query);
     console.log("Term:", term1, term2);

@@ -112,6 +112,15 @@ const Inputform = () => {
   const [POS06, setPOS06] = useState("");
   const [LQ_POS01, setLQ_POS01] = useState("");
   const [LQ_POS02, setLQ_POS02] = useState("");
+<<<<<<< HEAD
+=======
+  const [Scale01, setScale01] = useState("");
+  const [Scale02, setScale02] = useState("");
+  const [Scale03, setScale03] = useState("");
+  const [Scale04, setScale04] = useState("");
+  const [Scale05, setScale05] = useState("");
+  const [Scale06, setScale06] = useState("");
+>>>>>>> 92cbe77082b86cdd71d5da81d5fc5ffa0a8901f8
   const [AreaManagerName, setAreaManagerName] = useState("");
   const [EPFno_Am, setEPFno_Am] = useState("");
   const [ContactNo_Am, setContactNo_Am] = useState("");
@@ -144,6 +153,15 @@ const Inputform = () => {
     POS06,
     LQ_POS01,
     LQ_POS02,
+<<<<<<< HEAD
+=======
+    Scale01,
+    Scale02,
+    Scale03,
+    Scale04,
+    Scale05,
+    Scale06,
+>>>>>>> 92cbe77082b86cdd71d5da81d5fc5ffa0a8901f8
     Region,
     openDate,
     AreaManagerName,
@@ -158,6 +176,10 @@ const Inputform = () => {
   const [togglemode2, setTogglemode2] = useState(false);
   const [togglemode3, setTogglemode3] = useState(false);
   const [togglemode4, setTogglemode4] = useState(false);
+<<<<<<< HEAD
+=======
+  const [togglemode5, setTogglemode5] = useState(false);
+>>>>>>> 92cbe77082b86cdd71d5da81d5fc5ffa0a8901f8
 
   useEffect(() => {
     setShowForm(true);
@@ -231,6 +253,10 @@ const Inputform = () => {
     //   [name]: value,
     // }));
   };
+<<<<<<< HEAD
+=======
+
+>>>>>>> 92cbe77082b86cdd71d5da81d5fc5ffa0a8901f8
   const isValidIPAddress = (value) => {
     const ipv4WithSubnetRegex =
       /^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(\/(3[0-2]|[12]?[0-9]))?$/;
@@ -241,27 +267,58 @@ const Inputform = () => {
 
   const formValidation = () => {
     const newErrors = {};
+<<<<<<< HEAD
     if (!checkedvalue) {
       newErrors.checkedvalue = "* Branch Type is required.";
     }
     if (!selectedProvince || !selectedDistrict) {
       newErrors.selectedProvince = "* Province and  District is required.";
+=======
+
+    if (!checkedvalue) {
+      newErrors.checkedvalue = "* Branch Type is required.";
+    }
+
+    if (!selectedProvince || !selectedDistrict) {
+      newErrors.selectedProvince = "* Province and District are required.";
+>>>>>>> 92cbe77082b86cdd71d5da81d5fc5ffa0a8901f8
     }
 
     if (!openDate) {
       newErrors.openDate = "* Opening date is required.";
     }
+<<<<<<< HEAD
     if (!TelephoneNumber) {
       newErrors.TelephoneNumber = " * Telephone number is required.";
     } else if (!/^\d{10}$/.test(TelephoneNumber)) {
       newErrors.TelephoneNumber =
         " * Invalid telephone number format (10 digits expected).";
     }
+=======
+
+    const validatePhoneNumber = (number) => {
+      if (!number) return " * Telephone number is required.";
+      if (!/^\d{10}$/.test(number))
+        return " * Invalid telephone number format (10 digits expected).";
+      return null;
+    };
+
+    const addErrorIfExists = (field, fieldName) => {
+      const error = validatePhoneNumber(field);
+      if (error) newErrors[fieldName] = error;
+    };
+
+    addErrorIfExists(TelephoneNumber, "TelephoneNumber");
+    addErrorIfExists(ContactNo_Am, "ContactNo_Am");
+    addErrorIfExists(ContactNo_Sm, "ContactNo_Sm");
+
+>>>>>>> 92cbe77082b86cdd71d5da81d5fc5ffa0a8901f8
     if (!Email) {
       newErrors.Email = "* Email is required.";
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(Email)) {
       newErrors.Email = " * Invalid email format.";
     }
+<<<<<<< HEAD
     if (!DSdevision) {
       newErrors.DSdevision = " * Ds devision is required.";
     }
@@ -370,10 +427,59 @@ const Inputform = () => {
       return;
     }
   };
+=======
+
+    if (!DSdevision) {
+      newErrors.DSdevision = " * Ds division is required.";
+    }
+
+    const ipFields = [
+      { field: GatewayIP, name: "GatewayIP" },
+      { field: ServerIP, name: "ServerIP" },
+      { field: ManagerPCIP, name: "ManagerPCIP" },
+      { field: FingerPrintIP, name: "FingerPrintIP" },
+      { field: AP, name: "AP" },
+      { field: LQAP, name: "LQAP" },
+      { field: POS01, name: "POS01" },
+      { field: POS02, name: "POS02" },
+      { field: POS03, name: "POS03" },
+      { field: POS04, name: "POS04" },
+      { field: POS05, name: "POS05" },
+      { field: POS06, name: "POS06" },
+      { field: LQ_POS01, name: "LQ_POS01" },
+      { field: LQ_POS02, name: "LQ_POS02" },
+      { field: Scale01, name: "Scale01" },
+      { field: Scale02, name: "Scale02" },
+      { field: Scale03, name: "Scale03" },
+      { field: Scale04, name: "Scale04" },
+      { field: Scale05, name: "Scale05" },
+      { field: Scale06, name: "Scale06" },
+    ];
+
+    ipFields.forEach(({ field, name }) => {
+      if (!isValidIPAddress(field)) {
+        newErrors[name] = " * Invalid IP Address.";
+      }
+    });
+
+    console.log("Validation Errors:", newErrors);
+
+    if (Object.keys(newErrors).length === 0) {
+      console.log("Form is valid.");
+      return true;
+    } else {
+      setErrors(newErrors);
+      console.log("Form has errors:", newErrors);
+      return false;
+    }
+  };
+
+>>>>>>> 92cbe77082b86cdd71d5da81d5fc5ffa0a8901f8
   const submitReview = async (e) => {
     e.preventDefault();
     console.log("submit clicked");
     const isValid = formValidation();
+<<<<<<< HEAD
     if (isValid) {
       try {
         const response = await axios.post("http://localhost:3001/insert", {
@@ -481,6 +587,121 @@ const Inputform = () => {
       setSelectedDistrict("");
       setCheckedvalue(false);
     }
+=======
+    console.log("Is form valid?", isValid);
+    if (!isValid) {
+      console.error(
+        "Form validation failed, please correct errors before submitting."
+      );
+      return;
+    }
+    try {
+      const response = await axios.post("http://localhost:3001/insert", {
+        BranchCode,
+        BranchName,
+        BranchAddress,
+        TelephoneNumber,
+        Email,
+        DSdevision,
+        VPNCircuitID,
+        GatewayIP,
+        ServerIP,
+        ManagerPCIP,
+        FingerPrintIP,
+        AP,
+        LQAP,
+        POS01,
+        POS02,
+        POS03,
+        POS04,
+        POS05,
+        POS06,
+        LQ_POS01,
+        LQ_POS02,
+        Scale01,
+        Scale02,
+        Scale03,
+        Scale04,
+        Scale05,
+        Scale06,
+        Region,
+        openDate,
+        AreaManagerName,
+        EPFno_Am,
+        ContactNo_Am,
+        branchManagerName,
+        EPFno_Sm,
+        ContactNo_Sm,
+        BranchType: checkedvalue,
+        selectedProvince: selectedProvince,
+        selectedDistrict: selectedDistrict,
+        SdWanID,
+      });
+
+      resetFormFields();
+      console.log(response.data);
+      console.log("Successful Insert");
+      setShowToast(true);
+      showToastMessage("Successful Insert", "success");
+
+      setTimeout(() => {
+        setShowToast(false);
+      }, 3000);
+      setShowForm(false);
+    } catch (error) {
+      if (error.response && error.response.status === 409) {
+        setShowToast(true);
+        showToastMessage("Duplicate Entry: This data already exists", "danger");
+        console.error("Duplicate entry:", error.response.data.error);
+      } else {
+        setShowToast(true);
+        showToastMessage(`Unexpected error: ${error.message}`, "danger");
+        console.error("Error:", error.message);
+      }
+    }
+  };
+
+  const resetFormFields = () => {
+    setOpenDate("");
+    setRegion("");
+    setBranchCode("");
+    setBranchName("");
+    setBranchAddress("");
+    setTelephoneNumber("");
+    setEmail("");
+    setDSdivision("");
+    setVPNCircuitID("");
+    setSdWanId("");
+    setGatewayIP("");
+    setServerIP("");
+    setManagerPCIP("");
+    setFingerPrintIP("");
+    setAP("");
+    setLQAP("");
+    setPOS01("");
+    setPOS02("");
+    setPOS03("");
+    setPOS04("");
+    setPOS05("");
+    setPOS06("");
+    setScale01("");
+    setScale02("");
+    setScale03("");
+    setScale04("");
+    setScale05("");
+    setScale06("");
+    setLQ_POS01("");
+    setLQ_POS02("");
+    setAreaManagerName("");
+    setContactNo_Am("");
+    setEPFno_Am("");
+    setBranchManagerName("");
+    setContactNo_Sm("");
+    setEPFno_Sm("");
+    setSelectedProvince("");
+    setSelectedDistrict("");
+    setCheckedvalue(false);
+>>>>>>> 92cbe77082b86cdd71d5da81d5fc5ffa0a8901f8
   };
 
   const showToastMessage = (message, type) => {
@@ -494,6 +715,10 @@ const Inputform = () => {
     setTogglemode2(false);
     setTogglemode3(false);
     setTogglemode4(false);
+<<<<<<< HEAD
+=======
+    setTogglemode5(false);
+>>>>>>> 92cbe77082b86cdd71d5da81d5fc5ffa0a8901f8
   };
 
   const handleToggleMode2 = () => {
@@ -501,6 +726,10 @@ const Inputform = () => {
     setTogglemode2(true);
     setTogglemode3(false);
     setTogglemode4(false);
+<<<<<<< HEAD
+=======
+    setTogglemode5(false);
+>>>>>>> 92cbe77082b86cdd71d5da81d5fc5ffa0a8901f8
   };
 
   const handleToggleMode3 = () => {
@@ -508,6 +737,10 @@ const Inputform = () => {
     setTogglemode2(false);
     setTogglemode3(true);
     setTogglemode4(false);
+<<<<<<< HEAD
+=======
+    setTogglemode5(false);
+>>>>>>> 92cbe77082b86cdd71d5da81d5fc5ffa0a8901f8
   };
 
   const handleToggleMode4 = () => {
@@ -515,6 +748,17 @@ const Inputform = () => {
     setTogglemode2(false);
     setTogglemode3(false);
     setTogglemode4(true);
+<<<<<<< HEAD
+=======
+    setTogglemode5(false);
+  };
+  const handleToggleMode5 = () => {
+    setTogglemode(false);
+    setTogglemode2(false);
+    setTogglemode3(false);
+    setTogglemode4(false);
+    setTogglemode5(true);
+>>>>>>> 92cbe77082b86cdd71d5da81d5fc5ffa0a8901f8
   };
 
   const handleResetIForm = () => {
@@ -1123,6 +1367,147 @@ const Inputform = () => {
             </div>
           )}
           <div
+<<<<<<< HEAD
+=======
+            className={`toggleBranch toggleBranch5 ${
+              togglemode5 ? "active" : ""
+            }`}
+            onClick={handleToggleMode5}
+          >
+            <legend> Scale Details</legend>
+          </div>
+          {togglemode5 && (
+            <div className="details">
+              <div className="formRow">
+                <div className="formColumn">
+                  <label>Scale 01</label>
+                  <input
+                    type="text"
+                    name="Scale01"
+                    value={Scale01}
+                    placeholder="Scale 01"
+                    onChange={(e) => {
+                      setScale01(e.target.value);
+                    }}
+                  />
+                </div>
+                <div className="formColumn">
+                  <label>Scale 02</label>
+                  <input
+                    type="text"
+                    name="Scale02"
+                    value={Scale02}
+                    placeholder="Scale 02"
+                    onChange={(e) => {
+                      setScale02(e.target.value);
+                    }}
+                  />
+                </div>
+              </div>
+              <div className="formRow">
+                <div className="formColumn">
+                  {errors.Scale01 && (
+                    <div className="error" style={{ marginLeft: "120px" }}>
+                      {errors.Scale01}
+                    </div>
+                  )}
+                </div>
+                <div className="formColumn">
+                  {errors.Scale02 && (
+                    <div className="error" style={{ marginLeft: "120px" }}>
+                      {errors.Scale02}
+                    </div>
+                  )}
+                </div>
+              </div>
+              <div className="formRow">
+                <div className="formColumn">
+                  <label>Scale 03</label>
+                  <input
+                    type="text"
+                    name="Scale03"
+                    value={Scale03}
+                    placeholder="Scale 03"
+                    onChange={(e) => {
+                      setScale03(e.target.value);
+                    }}
+                  />
+                </div>
+                <div className="formColumn">
+                  <label>Scale 04</label>
+                  <input
+                    type="text"
+                    name="Scale04"
+                    value={Scale04}
+                    placeholder="Scale 04"
+                    onChange={(e) => {
+                      setScale04(e.target.value);
+                    }}
+                  />
+                </div>
+              </div>
+              <div className="formRow">
+                <div className="formColumn">
+                  {errors.Scale03 && (
+                    <div className="error" style={{ marginLeft: "120px" }}>
+                      {errors.Scale03}
+                    </div>
+                  )}
+                </div>
+                <div className="formColumn">
+                  {errors.Scale04 && (
+                    <div className="error" style={{ marginLeft: "120px" }}>
+                      {errors.Scale04}
+                    </div>
+                  )}
+                </div>
+              </div>
+              <div className="formRow">
+                <div className="formColumn">
+                  <label>Scale 05</label>
+                  <input
+                    type="text"
+                    name="Scale05"
+                    value={Scale05}
+                    placeholder="Scale 05"
+                    onChange={(e) => {
+                      setScale05(e.target.value);
+                    }}
+                  />
+                </div>
+                <div className="formColumn">
+                  <label>Scale 06</label>
+                  <input
+                    type="text"
+                    name="Scale06"
+                    value={Scale06}
+                    placeholder="Scale 06"
+                    onChange={(e) => {
+                      setScale06(e.target.value);
+                    }}
+                  />
+                </div>
+              </div>
+              <div className="formRow">
+                <div className="formColumn">
+                  {errors.Scale05 && (
+                    <div className="error" style={{ marginLeft: "120px" }}>
+                      {errors.Scale05}
+                    </div>
+                  )}
+                </div>
+                <div className="formColumn">
+                  {errors.Scale06 && (
+                    <div className="error" style={{ marginLeft: "120px" }}>
+                      {errors.Scale06}
+                    </div>
+                  )}
+                </div>
+              </div>
+            </div>
+          )}
+          <div
+>>>>>>> 92cbe77082b86cdd71d5da81d5fc5ffa0a8901f8
             className={`toggleBranch toggleBranch4 ${
               togglemode4 ? "active" : ""
             }`}

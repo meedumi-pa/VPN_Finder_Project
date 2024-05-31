@@ -45,6 +45,15 @@ const Searchbar = () => {
     Contact_BM: "",
     BM_Name: "",
     Contact_AM: "",
+<<<<<<< HEAD
+=======
+    Scale01: "",
+    Scale02: "",
+    Scale03: "",
+    Scale04: "",
+    Scale05: "",
+    Scale06: "",
+>>>>>>> 92cbe77082b86cdd71d5da81d5fc5ffa0a8901f8
   });
 
   const [selectedRegion, setSelectedRegion] = useState([
@@ -115,6 +124,10 @@ const Searchbar = () => {
   const [togglesearch2, setTogglesearch2] = useState(false);
   const [togglesearch3, setTogglesearch3] = useState(false);
   const [togglesearch4, setTogglesearch4] = useState(false);
+<<<<<<< HEAD
+=======
+  const [togglesearch5, setTogglesearch5] = useState(false);
+>>>>>>> 92cbe77082b86cdd71d5da81d5fc5ffa0a8901f8
 
   const [toastMessage, setToastMessage] = useState("");
   const [errors, setErrors] = useState({});
@@ -209,6 +222,15 @@ const Searchbar = () => {
     const Contact_BM = formData?.Contact_BM;
     const AM_Name = formData?.AM_Name;
     const BM_Name = formData?.BM_Name;
+<<<<<<< HEAD
+=======
+    const Scale01 = formData?.Scale01;
+    const Scale02 = formData?.Scale02;
+    const Scale03 = formData?.Scale03;
+    const Scale04 = formData?.Scale04;
+    const Scale05 = formData?.Scale05;
+    const Scale06 = formData?.Scale06;
+>>>>>>> 92cbe77082b86cdd71d5da81d5fc5ffa0a8901f8
 
     const newErrors = {};
 
@@ -272,6 +294,27 @@ const Searchbar = () => {
     if (!isValidIPAddress(LQPOS02)) {
       newErrors.LQPOS02 = " * Invalid IP Address";
     }
+<<<<<<< HEAD
+=======
+    if (!isValidIPAddress(Scale01)) {
+      newErrors.Scale01 = " * Invalid IP Address";
+    }
+    if (!isValidIPAddress(Scale02)) {
+      newErrors.Scale02 = " * Invalid IP Address";
+    }
+    if (!isValidIPAddress(Scale03)) {
+      newErrors.Scale03 = " * Invalid IP Address";
+    }
+    if (!isValidIPAddress(Scale04)) {
+      newErrors.Scale04 = " * Invalid IP Address";
+    }
+    if (!isValidIPAddress(Scale05)) {
+      newErrors.Scale05 = " * Invalid IP Address";
+    }
+    if (!isValidIPAddress(Scale06)) {
+      newErrors.Scale06 = " * Invalid IP Address";
+    }
+>>>>>>> 92cbe77082b86cdd71d5da81d5fc5ffa0a8901f8
     if (Object.keys(newErrors).length === 0) {
       // All validations passed, submit the form
       console.log("Form submitted!");
@@ -324,18 +367,37 @@ const Searchbar = () => {
     setTogglesearch2(true);
     setTogglesearch3(false);
     setTogglesearch4(false);
+<<<<<<< HEAD
+=======
+    setTogglesearch5(false);
+>>>>>>> 92cbe77082b86cdd71d5da81d5fc5ffa0a8901f8
   };
   const handleToggleSearch3 = () => {
     setTogglesearch(false);
     setTogglesearch2(false);
     setTogglesearch3(true);
     setTogglesearch4(false);
+<<<<<<< HEAD
+=======
+    setTogglesearch5(false);
+>>>>>>> 92cbe77082b86cdd71d5da81d5fc5ffa0a8901f8
   };
   const handleToggleSearch4 = () => {
     setTogglesearch(false);
     setTogglesearch2(false);
     setTogglesearch3(false);
     setTogglesearch4(true);
+<<<<<<< HEAD
+=======
+    setTogglesearch5(false);
+  };
+  const handleToggleSearch5 = () => {
+    setTogglesearch(false);
+    setTogglesearch2(false);
+    setTogglesearch3(false);
+    setTogglesearch4(false);
+    setTogglesearch5(true);
+>>>>>>> 92cbe77082b86cdd71d5da81d5fc5ffa0a8901f8
   };
   return (
     <div className="searchContainer">
@@ -912,6 +974,141 @@ const Searchbar = () => {
           )}
         </fieldset>
         <fieldset>
+<<<<<<< HEAD
+=======
+          <legend>Scale Details</legend>
+
+          <BsChevronCompactDown
+            size={25}
+            className={`toggleS_branch toggleS_branch5  ${
+              togglesearch5 ? "active" : ""
+            }`}
+            onClick={handleToggleSearch5}
+          />
+          {togglesearch5 && (
+            <>
+              <div className="form-Row">
+                <div className="form_field">
+                  <label>Scale 01</label>
+                  <input
+                    type="text"
+                    value={formData?.Scale01 || ""}
+                    readOnly={!editMode}
+                    onChange={(e) =>
+                      handleInputChange("Scale01", e.target.value)
+                    }
+                    className={`form-input ${editMode ? "inputEditMode" : ""}`}
+                  />
+                </div>
+
+                <div className="form_field">
+                  <label>Scale 02</label>
+                  <input
+                    type="text"
+                    value={formData?.Scale02 || ""}
+                    readOnly={!editMode}
+                    onChange={(e) =>
+                      handleInputChange("Scale02", e.target.value)
+                    }
+                    className={`form-input ${editMode ? "inputEditMode" : ""}`}
+                  />
+                </div>
+              </div>
+              <div className="form-Row">
+                <div className="form_field">
+                  {errors.Scale01 && (
+                    <div className="error-m">{errors.Scale01}</div>
+                  )}
+                </div>
+                <div className="form_field">
+                  {errors.Scale02 && (
+                    <div className="error-m">{errors.Scale02}</div>
+                  )}
+                </div>
+              </div>
+              <div className="form-Row">
+                <div className="form_field">
+                  <label>Scale 03</label>
+                  <input
+                    type="text"
+                    value={formData?.Scale03 || ""}
+                    readOnly={!editMode}
+                    onChange={(e) =>
+                      handleInputChange("Scale03", e.target.value)
+                    }
+                    className={`form-input ${editMode ? "inputEditMode" : ""}`}
+                  />
+                </div>
+
+                <div className="form_field">
+                  <label>Scale 04</label>
+                  <input
+                    type="text"
+                    value={formData?.Scale04 || ""}
+                    readOnly={!editMode}
+                    onChange={(e) =>
+                      handleInputChange("Scale04", e.target.value)
+                    }
+                    className={`form-input ${editMode ? "inputEditMode" : ""}`}
+                  />
+                </div>
+              </div>
+              <div className="form-Row">
+                <div className="form_field">
+                  {errors.Scale03 && (
+                    <div className="error-m">{errors.Scale03}</div>
+                  )}
+                </div>
+                <div className="form_field">
+                  {errors.Scale04 && (
+                    <div className="error-m">{errors.Scale04}</div>
+                  )}
+                </div>
+              </div>
+              <div className="form-Row">
+                <div className="form_field">
+                  <label>Scale 05</label>
+                  <input
+                    type="text"
+                    value={formData?.Scale05 || ""}
+                    readOnly={!editMode}
+                    onChange={(e) =>
+                      handleInputChange("Scale05", e.target.value)
+                    }
+                    className={`form-input ${editMode ? "inputEditMode" : ""}`}
+                  />
+                </div>
+
+                <div className="form_field">
+                  <label>Scale 06</label>
+                  <input
+                    type="text"
+                    value={formData?.Scale06 || ""}
+                    readOnly={!editMode}
+                    onChange={(e) =>
+                      handleInputChange("Scale06", e.target.value)
+                    }
+                    className={`form-input ${editMode ? "inputEditMode" : ""}`}
+                  />
+                </div>
+              </div>
+              <div className="form-Row">
+                <div className="form_field">
+                  {errors.Scale05 && (
+                    <div className="error-m">{errors.Scale05}</div>
+                  )}
+                </div>
+                <div className="form_field">
+                  {errors.Scale06 && (
+                    <div className="error-m">{errors.Scale06}</div>
+                  )}
+                </div>
+              </div>
+            </>
+          )}
+        </fieldset>
+        <fieldset>
+>>>>>>> 92cbe77082b86cdd71d5da81d5fc5ffa0a8901f8
           <legend>Manager Details</legend>
           <BsChevronCompactDown
             size={25}

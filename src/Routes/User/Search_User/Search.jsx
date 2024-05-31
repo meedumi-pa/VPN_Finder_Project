@@ -45,15 +45,14 @@ const Search = () => {
     Contact_BM: "",
     BM_Name: "",
     Contact_AM: "",
-<<<<<<< HEAD
-=======
+
     Scale01: "",
     Scale02: "",
     Scale03: "",
     Scale04: "",
     Scale05: "",
     Scale06: "",
->>>>>>> 92cbe77082b86cdd71d5da81d5fc5ffa0a8901f8
+
   });
 
   const [selectedRegion, setSelectedRegion] = useState([
@@ -124,10 +123,9 @@ const Search = () => {
   const [togglesearch2, setTogglesearch2] = useState(false);
   const [togglesearch3, setTogglesearch3] = useState(false);
   const [togglesearch4, setTogglesearch4] = useState(false);
-<<<<<<< HEAD
-=======
+
   const [togglesearch5, setTogglesearch5] = useState(false);
->>>>>>> 92cbe77082b86cdd71d5da81d5fc5ffa0a8901f8
+
 
   const [toastMessage, setToastMessage] = useState("");
   const [errors, setErrors] = useState({});
@@ -331,10 +329,9 @@ const Search = () => {
     setTogglesearch2(false);
     setTogglesearch3(false);
     setTogglesearch4(false);
-<<<<<<< HEAD
-=======
+
     setTogglesearch5(false);
->>>>>>> 92cbe77082b86cdd71d5da81d5fc5ffa0a8901f8
+
   };
   const handleToggleSearch2 = () => {
     setTogglesearch(false);
@@ -347,20 +344,19 @@ const Search = () => {
     setTogglesearch2(false);
     setTogglesearch3(true);
     setTogglesearch4(false);
-<<<<<<< HEAD
-=======
+
     setTogglesearch5(false);
->>>>>>> 92cbe77082b86cdd71d5da81d5fc5ffa0a8901f8
+
   };
   const handleToggleSearch4 = () => {
     setTogglesearch(false);
     setTogglesearch2(false);
     setTogglesearch3(false);
     setTogglesearch4(true);
-<<<<<<< HEAD
-  };
-=======
     setTogglesearch5(false);
+  };
+
+    
   };
   const handleToggleSearch5 = () => {
     setTogglesearch(false);
@@ -370,7 +366,7 @@ const Search = () => {
     setTogglesearch5(true);
   };
 
->>>>>>> 92cbe77082b86cdd71d5da81d5fc5ffa0a8901f8
+
   return (
     <div className="searchContainer">
       {/* {!loggedIn && <LoginForm setLoggedIn={setLoggedIn} />} */}
@@ -946,8 +942,7 @@ const Search = () => {
           )}
         </fieldset>
         <fieldset>
-<<<<<<< HEAD
-=======
+
           <legend>Scale Details</legend>
 
           <BsChevronCompactDown
@@ -1044,7 +1039,7 @@ const Search = () => {
           )}
         </fieldset>
         <fieldset>
->>>>>>> 92cbe77082b86cdd71d5da81d5fc5ffa0a8901f8
+
           <legend>Manager Details</legend>
           <BsChevronCompactDown
             size={25}
